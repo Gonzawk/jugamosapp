@@ -1,0 +1,25 @@
+{
+  "name": "jugamos-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "npm run build:production",
+    "build:testing": "tsc -b && vite build --mode testing && node scripts/postbuild.mjs testing",
+    "build:production": "tsc -b && vite build --mode production && node scripts/postbuild.mjs production",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.1"
+  }
+}
