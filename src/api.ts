@@ -115,3 +115,17 @@ export const onboardingApi = {
     }),
   status: (id: string) => json<unknown>(`/api/solicitudes-complejos/${encodeURIComponent(id)}/estado`),
 };
+
+// Documentos legales públicos: siempre se leen desde la API del entorno activo.
+export type LegalDocument = {
+  id: string;
+  type: 'TERMS' | 'PRIVACY';
+  version: number;
+  title: string;
+  content: string;
+  publishedAtUtc: string | null;
+};
+
+export const legalApi = {
+  current: () => json<LegalDocument[]>('/api/legal/vigentes'),
+};
